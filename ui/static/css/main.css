@@ -1,0 +1,442 @@
+*{
+    box-sizing: border-box ;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Ubuntu Mono", monospace;
+  }
+body {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+.allfilters{
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  padding: 10px;
+  margin: auto;
+  justify-content: center; /* Center items vertically */
+}
+header {
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-between; /* Distribute space evenly between items */
+  background: black;
+  padding: 10px;
+  text-align: center;
+  font-size: 23px;
+}
+
+header h1 a{
+  font-size: 70px;
+  font-weight: 600;
+  background-image: repeating-conic-gradient(#553c9a 0%, #553c9a 10%, #ee4b2b 10%, #ee4b2b 20%, 
+  #00c2cb 20%, #00c2cb 30%);
+  color: transparent;
+   background-clip: text;
+  -webkit-background-clip: text;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+#input-box {
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  width: 200px;
+  font-size: 14px;
+}
+
+#search {
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+#search option {
+  padding: 8px;
+}
+
+
+.button {
+  display: inline-block;
+  background-color: #333;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #172017;
+} 
+.result-box {
+  margin-top: 20px;
+}
+header a {
+text-decoration: none;
+color: #fff;
+}
+
+.container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+padding: 20px;
+/* margin-left: 100px;
+margin-right: 100px; */
+margin: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.card {
+width: 240px;
+height: 290px;
+margin: 20px;
+padding: 1px;
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+text-align: center;
+transition: transform 0.3s;
+}
+
+.card:hover {
+transform: scale(1.05);
+}
+
+.card img {
+max-width: 100%;
+height: auto;
+border-radius: 5px;
+}
+
+h4 {
+margin-top: 10px;
+color: #333;
+}
+.search-box{
+width: 320px;
+background: #fff;
+margin: 18px;
+border-radius: 5px;
+}
+.row{
+display: flex;
+align-items: center;
+padding: 10px 20px;
+}
+.header25{
+  justify-content: center;
+}
+.result-box ul{
+border-top: 1px solid #999;
+padding: 15px 10px;
+}
+.result-box ul li{
+list-style: none;
+border-radius: 3px;
+padding: 15px;
+cursor: pointer;
+color: #333;
+}
+a{
+  text-decoration: none;
+  color: #747e62;
+}
+.header_main {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header_main:hover {
+  text-decoration: underline;
+}
+
+.container2 {
+  max-width: 660px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  text-align: center;
+  color: #ff0000;
+}
+
+.error__title {
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.error__content {
+  font-size: 26px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+} */
+
+.members, .firstalbum, .upcoming {
+  margin-top: 20px;
+}
+.members h1, .firstalbum h2, .creationdate h2, .upcoming h2 {
+  font-size: 22px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* FontAwesome styles - assuming you have FontAwesome linked or included */
+i.fa-2xl {
+  font-size: 36px;
+}
+
+i.fa-xl {
+  font-size: 36px;
+}
+
+.fa-bounce {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-20px);
+  }
+  60% {
+      transform: translateY(-10px);
+  }
+}
+.divButton{
+  margin-top: 25px;
+  text-align: center;
+}
+.container3 {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.Concerts{
+  margin-top: 15px;
+  margin-left: 35px;
+}
+.wrapper{
+  width: 400px;
+  height: 220px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 10px 25px 20px;
+}
+header h2{
+  font-size: 24px;
+  font-weight: 600;
+}
+header p{
+  margin-top: 5px;
+  font-size: 16px;
+}
+.year-input{
+  width: 100%;
+  display: flex;
+  margin: 30px 0 35px;
+}
+.year-input .field{
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.field input{
+  width: 100%;
+  height: 100%;
+  margin-left: 12px;
+  text-align: center;
+  font-size: 19px;
+  outline: none;
+  border: 1px solid #999;
+  border-radius: 5px;
+  -moz-appearance: textfield;
+}
+.year-input .separator{
+  width: 130px; 
+  display:flex;
+  font-size: 19px;
+  align-items: center;
+  justify-content: center;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+.slider{
+  height: 5px;
+  background: #ddd;
+  border-radius: 5px;
+  position: relative;
+}
+.slider .progress{
+  height: 5px;
+  left: 25%;
+  right: 25%;
+  background: #17a2b8;
+  border-radius: 5px;
+  position: absolute;
+}
+.range-input{
+  position: relative;
+  right: 50%;
+}
+.range-input input{
+  position: absolute;
+  top: -5px;
+  height: 5px;
+  width: 100%;
+  background: none; 
+  -webkit-appearance: none; 
+}
+input[type="range"]::-webkit-slider-thumb{
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  background: #17a2b8;
+}
+input[type="range"]::-moz-range-thumb{
+  height: 17px;
+  width: 17px;
+  border:none;
+  border-radius: 50%;
+  pointer-events: auto;
+  -moz-appearance: none;
+  background: #17a2b8;
+}
+
+.container11 {
+  border-radius: 10px;
+  background-color:white;
+  width: 380px;
+  height: 220px;
+  margin: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Styles for the label "Choose number of members" */
+.labelformem {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+/* Styles for the checkboxes and labels */
+.checkbox {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  padding: 8px;
+
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.checkbox:checked + label {
+  background-color: LightSkyBlue ;
+  color: #fff;
+}
+
+/* Styling for the "Select All" label */
+label[for="option-all"] {
+  font-weight: bold;
+}
+
+/* Hide the default checkbox */
+.checkbox {
+  position: absolute;
+  left: -9999px;
+}
+.containerLoc {
+    width: 350px; 
+    height: 100px; 
+    border-radius: 10px;
+    background-color: #fff; /* White background color */}
+
+.countryLabel {
+  font-weight: 600;
+  font-size: 24px;
+  font-family: "Ubuntu Mono", monospace;
+  padding-top: 10px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.countrySelect {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 150px; /* Set a fixed height for better visibility of multiple selections */
+}

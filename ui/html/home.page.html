@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel='stylesheet' type='text/css' href='/static/css/main.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
+    <title>Groupie-Tracker</title>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/" class="header25">Groupie-Tracker</a></h1>
+        <div class="allfilters">
+            <div class="wrapper">
+                <header style="background:white">
+                    <h2>Range by years</h2>
+                    <p>Use slider</p>
+                </header>
+                <div class="year-input">
+                    <div class="field">
+                        <span>Start</span>
+                        <input type="number" class="input-min" value="1956" disabled>
+                    </div>
+                    <div class="separator">-</div>
+                    <div class="field">
+                        <span>End</span>
+                        <input type="number" class="input-max" value="2017" disabled>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="progress"></div>
+                </div>
+                <div class="range-input">
+                    <input type="range" class="range-min" min="1950" max="2023" value="1956">
+                    <input type="range" class="range-max" min="1950" max="2023" value="2017">
+                </div>
+            </div>
+            <div class="container11">
+                <label for="members" class="labelformem">Choose number of members</label>
+                <br>
+                <input type="checkbox" id="option-all" onchange="checkAll(this)">
+                <label for="option-all">Select All</label>
+                <br>
+                <input type="checkbox" class="checkbox" id="option-1">
+                <label for="option-1">1</label>
+                <input type="checkbox" class="checkbox" id="option-2">
+                <label for="option-2">2</label>
+                <input type="checkbox" class="checkbox" id="option-3">
+                <label for="option-3">3</label>
+                <input type="checkbox" class="checkbox" id="option-4">
+                <label for="option-4">4</label>
+                <input type="checkbox" class="checkbox" id="option-5">
+                <label for="option-5">5</label>
+                <input type="checkbox" class="checkbox" id="option-6">
+                <label for="option-6">6</label>
+                <input type="checkbox" class="checkbox" id="option-7">
+                <label for="option-7">7</label>
+                <input type="checkbox" class="checkbox" id="option-8">
+                <label for="option-8">8</label>
+            </div>
+            <div>
+                <div class="containerLoc">
+                    <label for="countries" class="countryLabel">Country filter</label>
+                    <p>You can pick miltiple options</p>
+                    <select name="countries" id="countries" class="countrySelect" multiple></select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container" id="artistContainer"></div>
+    <script>
+
+        var artists = JSON.parse('{{.}}');;
+        var artistContainer = document.getElementById('artistContainer');
+        var locationContainer = document.getElementById('countries')
+        let countryMap = new Map();
+        artists.forEach(function(artist) {
+            // Create the card container
+            var card = document.createElement('div');
+            card.className = 'card';
+            // Create the link with the artist's ID
+            var link = document.createElement('a');
+            link.href = '/artist?id=' + artist.id;
+
+            // Create the image element
+            var image = document.createElement('img');
+            image.src = artist.image;
+            image.alt = artist.name;
+
+            // Create the heading element
+            var heading = document.createElement('h4');
+            heading.textContent = artist.name;
+
+            // Append elements to the card
+            link.appendChild(image);
+            link.appendChild(heading);
+            card.appendChild(link);
+
+            // Append the card to the container
+            artistContainer.appendChild(card);
+            for (var i=0; i < artist.locations2.length; i++){
+                var opt = document.createElement('option');
+                opt.className = 'country';
+                var country = artist.locations2[i].indexOf("-")
+                let tempresult = artist.locations2[i].slice(country+1, artist.locations2[i].length).replace(/_/g, ' ');
+                var words = tempresult.split(' ');
+                for (var j = 0; j < words.length; j++) {
+                    words[j] = words[j][0].toUpperCase() + words[j].substr(1);
+                }
+                var result =  words.join(' ');
+                if (!countryMap.has(result)){
+                    countryMap.set(result, true);
+                    opt.textContent = result;
+                    locationContainer.appendChild(opt);
+                }
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+    <script src="/static/css/filters.js"></script>
+</body>
+</html>

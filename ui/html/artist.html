@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' type='text/css' href='/static/css/main.css'>
+    <script src="https://kit.fontawesome.com/313b98e6f4.js" crossorigin="anonymous"></script>
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        {{.Name}}
+    </title>
+    <link rel="shortcut icon" href="{{.Image}}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1><a href="/">Groupie-Tracker</a></h1>
+    </header>
+    <div class="container3">
+    <h1 class="name" style="font-size: 40px; text-align: center;"> {{.Name}} <i class="fa-solid fa-music fa-bounce" style="margin: 10px; font-size: 30px;"></i> </h1>
+    <img style="margin-left: 20px; border-radius: 10px;" src="{{.Image}}" alt="{{.Name}}">
+    <div class="members">
+        <h3><i class="fa-solid fa-people-group fa-beat fa-2xl" style="font-size: 40px;"></i> Members:</h3>
+        <ul style="margin-top: 20px; margin-left: 50px;">
+        {{range .Members}}
+            <li>
+                {{.}}
+            </li>
+        {{end}}
+        </ul>
+    </div>    
+    <div class="firstalbum">
+        <h2><i class="fa-regular fa-calendar-xmark fa-2xl"></i> First album date: </h2>
+            <h3 style="margin-left: 60px ;">{{.FirstAlbum}}</h3>
+    </div>
+    <div class="creationdate">
+        <h2> <i class="fa-solid fa-calendar-day" style="font-size: 36px;color: firebrick;"></i>  Creation date: {{.CreationDate}}</h2>
+    </div>
+    <div class="upcoming concerts">
+        <h2><i class="fa-regular fa-calendar-days fa-xl"></i> Upcoming concerts:</h2>
+        <div class="Concerts">
+        {{range $key, $value := .Relations}}
+            <h2>{{$key}}</h2>
+			<ul>
+            {{range $key2, $value2 := $value}}
+                <li style="margin-top: 8px; margin-left: 15px"> {{$value2}}</li>
+            {{end}}
+            </ul>
+        {{end}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
